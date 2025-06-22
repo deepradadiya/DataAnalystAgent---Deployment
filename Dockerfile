@@ -12,6 +12,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
+# Expose the port dynamically assigned by Hugging Face
 EXPOSE $PORT
 
+# Use the PORT environment variable provided by Hugging Face Spaces
 CMD ["sh", "-c", "streamlit run app.py --server.port $PORT --server.address 0.0.0.0"]
