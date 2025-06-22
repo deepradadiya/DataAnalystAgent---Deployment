@@ -1,6 +1,6 @@
 #Core dependencies for the Data Analyst Agent
 
-Together.ai API client
+#Together.ai API client
 
 together==1.2.0
 
