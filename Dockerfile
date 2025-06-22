@@ -2,16 +2,13 @@ FROM python:3.9-slim
 
 WORKDIR /app
 
-Update pip to avoid potential issues
+RUN apt-get update && apt-get install -y \
+    tesseract-ocr \
+    libtesseract-dev \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN pip install --upgrade pip
-
-RUN apt-get update && apt-get install -y 
-tesseract-ocr 
-libtesseract-dev 
-&& rm -rf /var/lib/apt/lists/*
-
-COPY requirements.txt . RUN pip install --no-cache-dir -r requirements.txt
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
