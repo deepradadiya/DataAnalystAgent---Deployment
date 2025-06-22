@@ -1,4 +1,4 @@
-Core dependencies for the Data Analyst Agent
+#Core dependencies for the Data Analyst Agent
 
 Together.ai API client
 
